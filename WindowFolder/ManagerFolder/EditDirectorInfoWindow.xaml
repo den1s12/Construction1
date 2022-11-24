@@ -1,0 +1,77 @@
+﻿<Window x:Class="Construction.WindowFolder.ManagerFolder.EditDirectorInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Construction.WindowFolder.ManagerFolder"
+        mc:Ignorable="d"
+        Title="Добавить сотрудника" 
+        Height="470" Width="1000"
+        MaxHeight="470" MaxWidth="1000"
+        MinHeight="470" MinWidth="1000"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <Image Style="{DynamicResource LogoImage}"
+               Grid.Column="1"   Grid.Row="1"/>
+
+        <Label Content="Изменить информацию о директоре"
+               Grid.Row="1" Grid.ColumnSpan="3"
+               Style="{DynamicResource HeadingLabel}" Grid.Column="2" Margin="0,10"/>
+
+        <Label Content="Имя директора" Style="{DynamicResource OrdinaryLabel}"
+               Grid.Column="1" Grid.Row="3"/>
+        <TextBox x:Name="LastNameDirector" Grid.Row="3" Grid.Column="2" Style="{DynamicResource TextBox}"/>
+
+        <Label Content="Фамилия директора" Style="{DynamicResource OrdinaryLabel}"
+               Grid.Column="1" Grid.Row="5"/>
+        <TextBox x:Name="FirstNameDirector" Grid.Row="5" Grid.Column="2" Style="{DynamicResource TextBox}"/>
+
+        <!--<Label Content="ИД Директора" Style="{DynamicResource OrdinaryLabel}"
+               Grid.Column="1" Grid.Row="7"/>
+        <TextBox x:Name="MiddleName" Grid.Row="7" Grid.Column="2"/>-->
+
+
+
+        <Label Content="Телефон директора" Style="{DynamicResource OrdinaryLabel}"
+               Grid.Column="3" Grid.Row="3" Margin="5,10,10,10"/>
+        <TextBox x:Name="PhoneNumberDirector" Grid.Row="3" Grid.Column="4" Style="{DynamicResource TextBox}"/>
+
+        <Label Content="Email директора" Style="{DynamicResource OrdinaryLabel}"
+               Grid.Column="3" Grid.Row="5"/>
+        <TextBox x:Name="EmailDirector" Grid.Row="5" Grid.Column="4" Style="{DynamicResource TextBox}"/>
+
+        <Label Content="Отчество директора" Style="{DynamicResource OrdinaryLabel}"
+               Grid.Row="7" Grid.Column="1" Margin="0,10,10,10"/>
+        <TextBox x:Name="MiddleNameDirector"  Grid.Row="7" Grid.Column="2" Style="{DynamicResource TextBox}"/>
+
+        <Button x:Name="BackBtn" Content="Назад"
+                Grid.Column="2" Grid.Row="9"
+                Click="BackBtn_Click" Style="{DynamicResource RoundCorner}" Width="250" Height="60"/>
+
+        <Button x:Name="EditBtn" Content="Изменить"
+                Grid.Column="4" Grid.Row="9"
+                Click="EditBtn_Click" Style="{DynamicResource RoundCorner}" Width="250" Height="60"/>
+    </Grid>
+</Window>
