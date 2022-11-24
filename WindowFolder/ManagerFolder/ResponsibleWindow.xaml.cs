@@ -56,7 +56,7 @@ namespace Construction.WindowFolder.ManagerFolder
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
             new EditResponsibleWindow().ShowDialog();
-            dGClass.LoadDg("Select * From dbo.CompanyView");
+            dGClass.LoadDg("Select * From dbo.Responsible");
             Close();
         }
 

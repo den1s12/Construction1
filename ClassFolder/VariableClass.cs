@@ -14,5 +14,6 @@ namespace Construction.ClassFolder
 
         public static string IdResponsible { get; set; }
 
+        public static string IdUser { get; set; }
     }
 }

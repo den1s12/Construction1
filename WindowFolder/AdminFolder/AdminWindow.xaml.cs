@@ -29,13 +29,48 @@ namespace Construction.WindowFolder.AdminFolder
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            dGClass.LoadDg("Select * FROM dbo.UserView");
+            dGClass.LoadDg("Select * FROM dbo.[User]");
         }
 
         private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
         {
-            dGClass.LoadDg("SELECT * FROM dbo.UserView " +
+            dGClass.LoadDg("SELECT * FROM dbo.[User] " +
                $"Where LoginUser Like '%{SearchTb.Text}%'");
+        }
+
+        private void AddUser_Click(object sender, RoutedEventArgs e)
+        {
+            new AddUserWindow().ShowDialog();
+            dGClass.LoadDg("Select * From dbo.[User]");
+            Close();
+        }
+
+        private void EditUser_Click(object sender, RoutedEventArgs e)
+        {
+            new EditUserWindow().ShowDialog();
+            dGClass.LoadDg("Select * From dbo.[User]");
+            Close();
+        }
+
+        private void UserDG_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (UserDG.SelectedItem == null)
+            {
+                MBClass.ErrorMB("Вы не выбрали строку");
+            }
+            else
+            {
+                VariableClass.IdUser = dGClass.SelectId();
+                try
+                {
+                    new EditUserWindow().ShowDialog();
+                    dGClass.LoadDg("Select * From dbo.[User]");
+                }
+                catch (Exception ex)
+                {
+                    MBClass.ErrorMB(ex);
+                }
+            }
         }
     }
 }

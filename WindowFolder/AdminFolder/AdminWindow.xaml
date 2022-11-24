@@ -45,8 +45,10 @@
               Grid.Column="1"
               Grid.ColumnSpan="2">
             <MenuItem Header=" Меню" Margin="0" Width="150">
-                <MenuItem x:Name="AddUser" Header="Добавить пользователя"/>
-                <MenuItem x:Name="EditUser" Header="Изменить пользователя"/>
+                <MenuItem x:Name="AddUser" Header="Добавить пользователя"
+                          Click="AddUser_Click"/>
+                <MenuItem x:Name="EditUser" Header="Изменить пользователя"
+                          Click="EditUser_Click"/>
                 <MenuItem x:Name="ChangeUser" Header="Сменить пользователя"/>
                 <MenuItem x:Name="Exit" Header="Выйти"/>
             </MenuItem>
@@ -57,7 +59,8 @@
         <DataGrid x:Name="UserDG" IsReadOnly="False"
                   AutoGenerateColumns="False" Grid.Column="1"
                   Grid.ColumnSpan="3"
-                  Grid.Row="7" Margin="10,0,0,0">
+                  Grid.Row="7" Margin="10,0,0,0"
+                  MouseDoubleClick="UserDG_MouseDoubleClick">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="dgTcIdStaff"
                                     Header="№ п/п"

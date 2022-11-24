@@ -121,5 +121,31 @@ namespace Construction.ClassFolder
                 sqlConnection.Close();
             }
         }
+
+        public void RoleCBLoad(ComboBox comboBox)
+        {
+            try
+            {
+                sqlConnection.Open();
+                sqlData = new SqlDataAdapter("Select IdRole, NameRole " +
+                    "From dbo.[Role]",
+                    sqlConnection);
+                dataSet = new DataSet();
+                sqlData.Fill(dataSet, "[Role]");
+                comboBox.ItemsSource = dataSet.Tables["[Role]"].DefaultView;
+                comboBox.DisplayMemberPath = dataSet.
+                    Tables["[Role]"].Columns["NameRole"].ToString();
+                comboBox.SelectedValuePath = dataSet.
+                   Tables["[Role]"].Columns["IdRole"].ToString();
+            }
+            catch (Exception ex)
+            {
+                MBClass.ErrorMB(ex);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
     }
 }
