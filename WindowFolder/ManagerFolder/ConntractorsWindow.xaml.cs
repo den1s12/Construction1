@@ -57,5 +57,10 @@ namespace Construction.WindowFolder.ManagerFolder
         {
 
         }
+
+        private void ContractorDG_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

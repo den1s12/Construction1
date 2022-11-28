@@ -52,12 +52,12 @@
                 <MenuItem x:Name="Exit" Header="Выйти"/>
             </MenuItem>
         </Menu>
-
+       
         <DataGrid x:Name="ContractorDG" IsReadOnly="True"
                   AutoGenerateColumns="False" Grid.Column="1"
                   Grid.ColumnSpan="2"
                   Grid.Row="6" Margin="0,10"
-                  MouseDoubleClick="CompanyDG_MouseDoubleClick">
+                MouseRightButtonDown="ContractorDG_MouseRightButtonDown">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="dgTcIdCompany"
                                     Header="№ п/п"
@@ -78,8 +78,14 @@
                 <DataGridTextColumn x:Name="dgTcIdWorkCategory"
                                     Header="Категория работ"
                                     Width="*"
-                                    Binding="{Binding IdWorkCategory}"/>
+                                    Binding="{Binding NameWorkCategory}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <!--<Grid.ContextMenu>
+            <ContextMenu>
+                <MenuItem x:Name="Edit" Header="Изменить" />
+                <MenuItem x:Name="Delete" Header="Удалить" />
+            </ContextMenu>
+        </Grid.ContextMenu>-->
     </Grid>
 </Window>

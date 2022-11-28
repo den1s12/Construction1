@@ -42,14 +42,14 @@ namespace Construction.WindowFolder.AdminFolder
         {
             new AddUserWindow().ShowDialog();
             dGClass.LoadDg("Select * From dbo.[User]");
-            Close();
+            //Close();
         }
 
         private void EditUser_Click(object sender, RoutedEventArgs e)
         {
             new EditUserWindow().ShowDialog();
             dGClass.LoadDg("Select * From dbo.[User]");
-            Close();
+            //Close();
         }
 
         private void UserDG_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -71,6 +71,16 @@ namespace Construction.WindowFolder.AdminFolder
                     MBClass.ErrorMB(ex);
                 }
             }
+        }
+
+        private void ChangeUser_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            MBClass.ExitMB();
         }
     }
 }

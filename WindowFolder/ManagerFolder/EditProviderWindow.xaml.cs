@@ -73,13 +73,13 @@ namespace Construction.WindowFolder.ManagerFolder
             try
             {
                 sqlConnection.Open();
-                SqlCommand = new SqlCommand("Select * from dbo.[SuppliedRecources]" +
-                    $"Where IdCompany = '{VariableClass.IdCompany}'",
+                SqlCommand = new SqlCommand("Select * from dbo.ProviderView" +
+                    $"Where IdSuppliedResource = '{VariableClass.IdSuppliedResource}'",
                     sqlConnection);
                 dataReader = SqlCommand.ExecuteReader();
                 dataReader.Read();
                 NameResource.Text = dataReader[1].ToString();
-                SuppliedResourceCB.SelectedValue = dataReader[9].ToString();
+                SuppliedResourceCB.SelectedValue = dataReader[2].ToString();
             }
             catch (Exception ex)
             {

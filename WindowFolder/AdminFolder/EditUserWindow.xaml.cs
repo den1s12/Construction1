@@ -28,6 +28,7 @@ namespace Construction.WindowFolder.AdminFolder
                 Integrated Security=True");
         SqlCommand SqlCommand;
         SqlDataReader dataReader;
+
         public EditUserWindow()
         {
             InitializeComponent();
@@ -64,7 +65,8 @@ namespace Construction.WindowFolder.AdminFolder
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            new AdminWindow().Show();
+            Close();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

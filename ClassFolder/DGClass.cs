@@ -51,7 +51,7 @@ namespace Construction.ClassFolder
             string id = "";
             try
             {
-              if (dataGrid != null)
+                if (dataGrid != null)
                 {
                     DataRowView dataRowView = dataGrid.SelectedItem
                         as DataRowView;

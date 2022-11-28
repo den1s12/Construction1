@@ -36,14 +36,14 @@ namespace Construction.WindowFolder.ManagerFolder
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
             new EditProviderWindow().ShowDialog();
-            dGClass.LoadDg("Select * From dbo.CompanyView");
+            dGClass.LoadDg("Select * From dbo.ProviderView");
             Close();
         }
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
             new AddProviderWindow().ShowDialog();
-            dGClass.LoadDg("Select * From dbo.CompanyView");
+            dGClass.LoadDg("Select * From dbo.ProviderView");
             Close();
         }
 
@@ -59,7 +59,7 @@ namespace Construction.WindowFolder.ManagerFolder
                 try
                 {
                     new EditProviderWindow().ShowDialog();
-                    dGClass.LoadDg("Select * From dbo.CompanyView");
+                    dGClass.LoadDg("Select * From dbo.ProviderView");
                 }
                 catch (Exception ex)
                 {
@@ -70,13 +70,13 @@ namespace Construction.WindowFolder.ManagerFolder
 
         private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
         {
-            dGClass.LoadDg("SELECT * FROM dbo.CompanyView " +
+            dGClass.LoadDg("SELECT * FROM dbo.ProviderView " +
             $"Where NameResource Like '%{SearchTb.Text}%'");
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            dGClass.LoadDg("Select * FROM dbo.CompanyView");
+            dGClass.LoadDg("Select * FROM dbo.ProviderView");
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)

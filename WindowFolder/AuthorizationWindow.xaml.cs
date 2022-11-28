@@ -81,6 +81,7 @@ namespace Construction.WindowFolder
                 finally
                 {
                     sqlConnection.Close();
+                    
                 }
             }
         }

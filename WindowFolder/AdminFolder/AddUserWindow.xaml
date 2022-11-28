@@ -54,10 +54,10 @@
 
         <Button x:Name="AddBtn" Content="Добавить пользователя" 
                 Grid.Column="2" Grid.Row="9"      
-                Click="AddBtn_Click" Style="{DynamicResource RoundCorner}" Width="250" Margin="152,10,10,0"/>
+                Click="AddBtn_Click" Style="{DynamicResource RoundCorner}" Width="230" Margin="152,10,10,0"/>
 
         <Button x:Name="BackBtn" Content="Назад" 
                 Grid.ColumnSpan="2" Grid.Row="9"
-                Click="BackBtn_Click" Style="{DynamicResource RoundCorner}" Width="250" Grid.Column="1" Margin="10,10,312,0"/>
+                Click="BackBtn_Click" Style="{DynamicResource RoundCorner}" Width="230" Grid.Column="1" Margin="10,10,312,0"/>
     </Grid>
 </Window>

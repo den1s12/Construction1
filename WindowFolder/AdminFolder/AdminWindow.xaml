@@ -44,13 +44,15 @@
         <Menu Grid.Row="5"
               Grid.Column="1"
               Grid.ColumnSpan="2">
-            <MenuItem Header=" Меню" Margin="0" Width="150">
+            <MenuItem Header="    Меню" Margin="0" Width="150" Height="50">
                 <MenuItem x:Name="AddUser" Header="Добавить пользователя"
                           Click="AddUser_Click"/>
                 <MenuItem x:Name="EditUser" Header="Изменить пользователя"
                           Click="EditUser_Click"/>
-                <MenuItem x:Name="ChangeUser" Header="Сменить пользователя"/>
-                <MenuItem x:Name="Exit" Header="Выйти"/>
+                <MenuItem x:Name="ChangeUser" Header="Сменить пользователя"
+                          Click="ChangeUser_Click"/>
+                <MenuItem x:Name="Exit" Header="Выйти"
+                          Click="Exit_Click"/>
             </MenuItem>
 
 
@@ -79,7 +81,7 @@
                 <DataGridTextColumn x:Name="dgTcMiddleName"
                                     Header="Роль"
                                     Width="*"
-                                    Binding="{Binding NameRole}"/>
+                                    Binding="{Binding IdRole}"/>
 
             </DataGrid.Columns>
         </DataGrid>

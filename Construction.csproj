@@ -138,9 +138,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="WindowFolder\ListFolder\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Page Include="ResourceFolder\Dictionary.xaml">
       <SubType>Designer</SubType>
