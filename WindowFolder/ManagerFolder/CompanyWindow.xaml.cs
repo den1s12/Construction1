@@ -25,7 +25,6 @@ namespace Construction.WindowFolder.ManagerFolder
            new SqlConnection(@"Data Source=HOME-PC\SQLEXPRESS;
                 Initial Catalog=user84;
                 Integrated Security=True");
-        //SqlCommand sqlCommand;
         DGClass dGClass;
         public CompanyWindow()
         {
@@ -35,26 +34,26 @@ namespace Construction.WindowFolder.ManagerFolder
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            dGClass.LoadDg("Select * FROM dbo.CompanyView");
+            dGClass.LoadDg("Select * FROM dbo.[Companies]");
         }
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
             new AddCompanyWindow().ShowDialog();
-            dGClass.LoadDg("Select * From dbo.CompanyView");
+            dGClass.LoadDg("Select * From dbo.[Companies]");
             Close();
         }
 
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
             new EditCompanyWindow().ShowDialog();
-            dGClass.LoadDg("Select * From dbo.CompanyView");
+            dGClass.LoadDg("Select * From dbo.[Companies]");
             Close();
         }
 
         private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
         {
-            dGClass.LoadDg("SELECT * FROM dbo.CompanyView " +
+            dGClass.LoadDg("SELECT * FROM dbo.[Companies] " +
             $"Where LoginUser Like '%{SearchTb.Text}%'");
         }
 
@@ -70,13 +69,18 @@ namespace Construction.WindowFolder.ManagerFolder
                 try
                 {
                     new EditCompanyWindow().ShowDialog();
-                    dGClass.LoadDg("Select * From dbo.CompanyView");
+                    dGClass.LoadDg("Select * From dbo.[Companies]");
                 }
                 catch (Exception ex)
                 {
                     MBClass.ErrorMB(ex);
                 }
             }
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

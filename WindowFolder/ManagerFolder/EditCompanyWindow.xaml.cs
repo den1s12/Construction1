@@ -72,6 +72,7 @@ namespace Construction.WindowFolder.ManagerFolder
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
+            new CompanyWindow().Show();
             this.Close();
         }
 

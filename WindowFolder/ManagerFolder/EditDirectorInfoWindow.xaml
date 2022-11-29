@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Construction.WindowFolder.ManagerFolder"
         mc:Ignorable="d"
-        Title="Добавить сотрудника" 
+        Title="Изменить информацию о директоре"
         Height="470" Width="1000"
         MaxHeight="470" MaxWidth="1000"
         MinHeight="470" MinWidth="1000"

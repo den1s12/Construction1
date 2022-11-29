@@ -78,6 +78,9 @@
     <Compile Include="WindowFolder\ManagerFolder\AddCompanyWindow.xaml.cs">
       <DependentUpon>AddCompanyWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowFolder\ManagerFolder\AddConntractorWindow.xaml.cs">
+      <DependentUpon>AddConntractorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowFolder\ManagerFolder\AddProviderWindow.xaml.cs">
       <DependentUpon>AddProviderWindow.xaml</DependentUpon>
     </Compile>
@@ -92,6 +95,9 @@
     </Compile>
     <Compile Include="WindowFolder\ManagerFolder\EditCompanyWindow.xaml.cs">
       <DependentUpon>EditCompanyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowFolder\ManagerFolder\EditConntractorWindow.xaml.cs">
+      <DependentUpon>EditConntractorWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowFolder\ManagerFolder\EditDirectorInfoWindow.xaml.cs">
       <DependentUpon>EditDirectorInfoWindow.xaml</DependentUpon>
@@ -164,6 +170,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WindowFolder\ManagerFolder\AddConntractorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WindowFolder\ManagerFolder\AddProviderWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -181,6 +191,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WindowFolder\ManagerFolder\EditCompanyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowFolder\ManagerFolder\EditConntractorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

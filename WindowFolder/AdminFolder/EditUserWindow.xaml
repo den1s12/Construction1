@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Construction.WindowFolder.AdminFolder"
         mc:Ignorable="d"
-        Title="Добавления пользователя" Height="470" Width="600"
+        Title="Изменение пользователя" Height="470" Width="600"
         MinHeight="470" MinWidth="600"
         MaxHeight="470" MaxWidth="600" 
         Loaded="Window_Loaded">

@@ -16,7 +16,9 @@ namespace Construction.ClassFolder
 
         public static string IdUser { get; set; }
 
-        public static string IdSuppliedResource { get; set; }
+        public static string IdResource { get; set; }
 
+        public static string IdWork { get; set; }
+        
     }
 }

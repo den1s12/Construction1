@@ -22,9 +22,9 @@ namespace Construction.WindowFolder.ManagerFolder
     public partial class ConntractorsWindow : Window
     {
         SqlConnection sqlConnection =
-            new SqlConnection(@"Data Source=HOME-PC\SQLEXPRESS;
-                                Initial Catalog=user84");
-        SqlCommand sqlCommand;
+           new SqlConnection(@"Data Source=HOME-PC\SQLEXPRESS;
+                Initial Catalog=user84;
+                Integrated Security=True");
         DGClass dGClass;
         public ConntractorsWindow()
         {
@@ -34,33 +34,53 @@ namespace Construction.WindowFolder.ManagerFolder
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            
+            new EditConntractorWindow().ShowDialog();
+            dGClass.LoadDg("Select * From dbo.[InfWorkContractor]");
+            Close();
         }
 
         private void CompanyDG_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
+            if (ContractorDG.SelectedItem == null)
+            {
+                MBClass.ErrorMB("Вы не выбрали строку");
+            }
+            else
+            {
+                VariableClass.IdWork = dGClass.SelectId();
+                try
+                {
+                    new EditConntractorWindow().ShowDialog();
+                    dGClass.LoadDg("Select * From dbo.[InfWorkContractor]");
+                }
+                catch (Exception ex)
+                {
+                    MBClass.ErrorMB(ex);
+                }
+            }
         }
 
         private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
         {
-            dGClass.LoadDg("SELECT * FROM dbo.ContractorView " +
+            dGClass.LoadDg("SELECT * FROM dbo.[InfWorkContractor] " +
            $"Where LoginUser Like '%{SearchTb.Text}%'");
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            dGClass.LoadDg("Select * FROM dbo.ContractorView");
+            dGClass.LoadDg("Select * FROM dbo.[InfWorkContractor]");
         }
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            new AddConntractorWindow().ShowDialog();
+            dGClass.LoadDg("Select * From dbo.[InfWorkContractor]");
+            Close();
         }
 
-        private void ContractorDG_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        private void Exit_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

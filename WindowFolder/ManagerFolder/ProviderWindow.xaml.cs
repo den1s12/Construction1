@@ -25,7 +25,6 @@ namespace Construction.WindowFolder.ManagerFolder
            new SqlConnection(@"Data Source=HOME-PC\SQLEXPRESS;
                 Initial Catalog=user84;
                 Integrated Security=True");
-        //SqlCommand sqlCommand;
         DGClass dGClass;
         public ProviderWindow()
         {
@@ -36,14 +35,14 @@ namespace Construction.WindowFolder.ManagerFolder
         private void EditBtn_Click(object sender, RoutedEventArgs e)
         {
             new EditProviderWindow().ShowDialog();
-            dGClass.LoadDg("Select * From dbo.ProviderView");
+            dGClass.LoadDg("Select * From dbo.[SuppliedRecources]");
             Close();
         }
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
             new AddProviderWindow().ShowDialog();
-            dGClass.LoadDg("Select * From dbo.ProviderView");
+            dGClass.LoadDg("Select * From dbo.[SuppliedRecources]");
             Close();
         }
 
@@ -55,11 +54,11 @@ namespace Construction.WindowFolder.ManagerFolder
             }
             else
             {
-                VariableClass.IdCompany = dGClass.SelectId();
+                VariableClass.IdResource = dGClass.SelectId();
                 try
                 {
                     new EditProviderWindow().ShowDialog();
-                    dGClass.LoadDg("Select * From dbo.ProviderView");
+                    dGClass.LoadDg("Select * From dbo.[SuppliedRecources]");
                 }
                 catch (Exception ex)
                 {
@@ -70,13 +69,13 @@ namespace Construction.WindowFolder.ManagerFolder
 
         private void SearchTb_TextChanged(object sender, TextChangedEventArgs e)
         {
-            dGClass.LoadDg("SELECT * FROM dbo.ProviderView " +
+            dGClass.LoadDg("SELECT * FROM dbo.[SuppliedRecources] " +
             $"Where NameResource Like '%{SearchTb.Text}%'");
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            dGClass.LoadDg("Select * FROM dbo.ProviderView");
+            dGClass.LoadDg("Select * FROM dbo.[SuppliedRecources]");
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)

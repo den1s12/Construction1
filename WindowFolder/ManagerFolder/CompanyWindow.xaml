@@ -58,7 +58,8 @@
                           Click="AddBtn_Click"/>
                 <MenuItem x:Name="EditCompany" Header="Изменить компанию"
                           Click="EditBtn_Click"/>
-                <MenuItem x:Name="Exit" Header="Выйти"/>
+                <MenuItem x:Name="Exit" Header="Выйти"
+                          Click="Exit_Click"/>
             </MenuItem>
         </Menu>
 
@@ -74,7 +75,7 @@
 
                 <DataGridTextColumn x:Name="dgTcFullNameCompany"
                                     Header="Название компании"
-                                    Width="*"
+                                    Width="350"
                                     Binding="{Binding FullNameCompany}"/>
 
                 <!--<DataGridTextColumn x:Name="dgTcShortNameCompany"
@@ -85,17 +86,17 @@
                 <DataGridTextColumn x:Name="dgTcIdDirector"
                                     Header="Директор"
                                     Width="*"
-                                    Binding="{Binding LastNameDirector}"/>
+                                    Binding="{Binding IdDirector}"/>
 
                 <DataGridTextColumn x:Name="dgTcIdResponsible"
                                     Header="Ответственный"
                                     Width="*"
-                                    Binding="{Binding LastNameResponsible}"/>
+                                    Binding="{Binding IdResponsible}"/>
 
-                <!--<DataGridTextColumn x:Name="dgTcDescriptionCompany"
+                <DataGridTextColumn x:Name="dgTcDescriptionCompany"
                                     Header="Описание компании"
-                                    Width="*"
-                                    Binding="{Binding DescriptionCompany}"/>-->
+                                    Width="350"
+                                    Binding="{Binding DescriptionCompany}"/>
 
                 <DataGridTextColumn x:Name="dgTcIdLegalAdress"
                                     Header="Адрес"
@@ -115,7 +116,7 @@
                 <DataGridTextColumn x:Name="dgTcIdStatus"
                                     Header="Статус"
                                     Width="*"
-                                    Binding="{Binding NameStatus}"/>
+                                    Binding="{Binding IdStatus}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

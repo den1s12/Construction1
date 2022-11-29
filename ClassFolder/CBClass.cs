@@ -96,31 +96,31 @@ namespace Construction.ClassFolder
             }
         }
 
-        public void ResourceNameCBLoad(ComboBox comboBox)
-        {
-            try
-            {
-                sqlConnection.Open();
-                sqlData = new SqlDataAdapter("Select IdSuppliedResource, NameResource " +
-                    "From dbo.[SuppliedRecource]",
-                    sqlConnection);
-                dataSet = new DataSet();
-                sqlData.Fill(dataSet, "[SuppliedRecource]");
-                comboBox.ItemsSource = dataSet.Tables["[SuppliedRecource]"].DefaultView;
-                comboBox.DisplayMemberPath = dataSet.
-                    Tables["[SuppliedRecource]"].Columns["NameResource"].ToString();
-                comboBox.SelectedValuePath = dataSet.
-                   Tables["[SuppliedRecource]"].Columns["IdSuppliedResource"].ToString();
-            }
-            catch (Exception ex)
-            {
-                MBClass.ErrorMB(ex);
-            }
-            finally
-            {
-                sqlConnection.Close();
-            }
-        }
+        //public void ResourceNameCBLoad(ComboBox comboBox)
+        //{
+        //    try
+        //    {
+        //        sqlConnection.Open();
+        //        sqlData = new SqlDataAdapter("Select NameResource " +
+        //            "From dbo.[SuppliedRecources]",
+        //            sqlConnection);
+        //        dataSet = new DataSet();
+        //        sqlData.Fill(dataSet, "[SuppliedRecources]");
+        //        comboBox.ItemsSource = dataSet.Tables["[SuppliedRecources]"].DefaultView;
+        //        comboBox.DisplayMemberPath = dataSet.
+        //            Tables["[SuppliedRecources]"].Columns["NameResource"].ToString();
+        //        comboBox.SelectedValuePath = dataSet.
+        //           Tables["[SuppliedRecources]"].Columns["NameResource"].ToString();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MBClass.ErrorMB(ex);
+        //    }
+        //    finally
+        //    {
+        //        sqlConnection.Close();
+        //    }
+        //}
 
         public void RoleCBLoad(ComboBox comboBox)
         {
@@ -137,6 +137,32 @@ namespace Construction.ClassFolder
                     Tables["[Role]"].Columns["NameRole"].ToString();
                 comboBox.SelectedValuePath = dataSet.
                    Tables["[Role]"].Columns["IdRole"].ToString();
+            }
+            catch (Exception ex)
+            {
+                MBClass.ErrorMB(ex);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
+
+        public void CompanyCBLoad(ComboBox comboBox)
+        {
+            try
+            {
+                sqlConnection.Open();
+                sqlData = new SqlDataAdapter("Select IdCompany, FullNameCompany " +
+                    "From dbo.[Companies]",
+                    sqlConnection);
+                dataSet = new DataSet();
+                sqlData.Fill(dataSet, "[Companies]");
+                comboBox.ItemsSource = dataSet.Tables["[Companies]"].DefaultView;
+                comboBox.DisplayMemberPath = dataSet.
+                    Tables["[Companies]"].Columns["FullNameCompany"].ToString();
+                comboBox.SelectedValuePath = dataSet.
+                   Tables["[Companies]"].Columns["IdCompany"].ToString();
             }
             catch (Exception ex)
             {

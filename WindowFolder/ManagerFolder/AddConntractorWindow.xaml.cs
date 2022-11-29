@@ -17,9 +17,9 @@ using System.Windows.Shapes;
 namespace Construction.WindowFolder.ManagerFolder
 {
     /// <summary>
-    /// Логика взаимодействия для AddProviderWindow.xaml
+    /// Логика взаимодействия для AddConntractorWindow.xaml
     /// </summary>
-    public partial class AddProviderWindow : Window
+    public partial class AddConntractorWindow : Window
     {
         CBClass cB;
         SqlConnection sqlConnection =
@@ -27,33 +27,40 @@ namespace Construction.WindowFolder.ManagerFolder
                 Initial Catalog=user84;
                 Integrated Security=True");
         SqlCommand SqlCommand;
-        public AddProviderWindow()
+        public AddConntractorWindow()
         {
             InitializeComponent();
             cB = new CBClass();
         }
 
-        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        private void Add_Click(object sender, RoutedEventArgs e)
         {
-            if (CBCompany.SelectedIndex == -1)
+            if (CompanyCB.SelectedIndex == -1)
             {
-                MBClass.ErrorMB("Не выбрана компания");
-                CBCompany.Focus();
+                MBClass.ErrorMB("Не выбрана компанию");
+                CompanyCB.Focus();
             }
-
             else
             {
                 try
                 {
                     sqlConnection.Open();
-                    SqlCommand = new SqlCommand("Insert Into dbo.[SuppliedRecources] " +
-                        "(NameResource, IdCompany) " +
-                        $"Values ('{NameResource.Text}'," +                     
-                        $"'{CBCompany.SelectedValue.ToString()}')",
+                    SqlCommand =
+                        new SqlCommand("Insert Into " +
+                        "dbo.[InfWorkContractor] " +
+                        "(NameWorkCategory, NameCity, NameStreet, " +
+                        "House, Building, Apartment, IdCompany)" +
+                        $"Values ('{NameWorkCategory.Text}'," +
+                        $"'{NameCity.Text}'," +
+                        $"'{NameStreet.Text}'," +
+                        $"'{House.Text}'," +
+                        $"'{Building.Text}'," +
+                        $"'{Apartment.Text}', " +
+                        $"'{CompanyCB.SelectedValue.ToString()}')",
                         sqlConnection);
                     SqlCommand.ExecuteNonQuery();
-                    MBClass.InformationMB($"Ресурс {NameResource.Text} " +
-                        $"успешно добавлен");
+                    MBClass.InformationMB($"Данные " +
+                        $"успешно отредактированы");
                 }
                 catch (Exception ex)
                 {
@@ -68,13 +75,14 @@ namespace Construction.WindowFolder.ManagerFolder
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            new ProviderWindow().Show();
-            this.Close();
+            new ConntractorsWindow().Show();
+            Close();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            cB.CompanyCBLoad(CBCompany);
+            cB.CompanyCBLoad(CompanyCB);
+
         }
     }
 }

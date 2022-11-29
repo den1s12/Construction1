@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Construction.WindowFolder.ManagerFolder"
         mc:Ignorable="d"
-        Title="Авторизация"
+        Title="Окно менеджера"
         Height="470" Width="420"
         MaxHeight="470" MaxWidth="420"
         MinHeight="470" MinWidth="420"

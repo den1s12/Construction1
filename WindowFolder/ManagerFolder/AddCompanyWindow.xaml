@@ -46,49 +46,50 @@
 
         <Label Content="Полное название компании" Style="{DynamicResource OrdinaryLabel}"
                Grid.Column="1" Grid.Row="3"/>
-        <TextBox x:Name="LastName" Grid.Row="3" Grid.Column="2" Style="{DynamicResource TextBox}"/>
+        <TextBox x:Name="FullNameCompany" Grid.Row="3" Grid.Column="2" Style="{DynamicResource TextBox}"/>
 
         <Label Content="Краткое название компании" Style="{DynamicResource OrdinaryLabel}"
                Grid.Column="1" Grid.Row="5"/>
-        <TextBox x:Name="FirstName" Grid.Row="5" Grid.Column="2" Style="{DynamicResource TextBox}"/>
+        <TextBox x:Name="ShortNameCompany" Grid.Row="5" Grid.Column="2" Style="{DynamicResource TextBox}"/>
 
         <!--<Label Content="ИД Директора" Style="{DynamicResource OrdinaryLabel}"
                Grid.Column="1" Grid.Row="7"/>
         <TextBox x:Name="MiddleName" Grid.Row="7" Grid.Column="2"/>-->
 
-        <Label Content="ИД Ответственного" Style="{DynamicResource OrdinaryLabel}"
+        <Label Content="Ответственный" Style="{DynamicResource OrdinaryLabel}"
                Grid.Column="1" Grid.Row="9"/>
-        <TextBox x:Name="NumberPhone" Grid.Row="9" Grid.Column="2" Style="{DynamicResource TextBox}"/>
+        <ComboBox x:Name="CBResponsible" Grid.Row="9" Grid.Column="2" Style="{DynamicResource ComboBox}"/>
 
         <Label Content="Описание" Style="{DynamicResource OrdinaryLabel}"
                Grid.Column="3" Grid.Row="3"/>
-        <TextBox x:Name="Office" Grid.Row="3" Grid.Column="4" Style="{DynamicResource TextBox}"/>
+        <TextBox x:Name="DescriptionCompany" Grid.Row="3" Grid.Column="4" Style="{DynamicResource TextBox}"/>
 
         <Label Content="Юридический адрес" Style="{DynamicResource OrdinaryLabel}"
                Grid.Column="1" Grid.Row="7"/>
-        <TextBox x:Name="Email" Grid.Row="7" Grid.Column="2" Style="{DynamicResource TextBox}"/>
+        <TextBox x:Name="IdLegalAdress" Grid.Row="7" Grid.Column="2" Style="{DynamicResource TextBox}"/>
 
         <Label Content="ИНН" Style="{DynamicResource OrdinaryLabel}"
                Grid.Column="3" Grid.Row="5"/>
-        <TextBox x:Name="Login" Grid.Row="5" Grid.Column="4" Style="{DynamicResource TextBox}"/>
+        <TextBox x:Name="INN" Grid.Row="5" Grid.Column="4" Style="{DynamicResource TextBox}"/>
 
         <Label Content="ОГРН" Style="{DynamicResource OrdinaryLabel}"
                Grid.Column="3" Grid.Row="7"/>
-        <TextBox x:Name="Password" Grid.Row="7" Grid.Column="4" Style="{DynamicResource TextBox}"/>
+        <TextBox x:Name="OGRN" Grid.Row="7" Grid.Column="4" Style="{DynamicResource TextBox}"/>
 
-        <Label Content="Статус" Style="{DynamicResource OrdinaryLabel}"
-               Grid.Column="1" Grid.Row="11"/>
-        <ComboBox x:Name="CBPost" Grid.Row="11" Grid.Column="2" />
+        <Label Content="Статус" Style="{DynamicResource OrdinaryLabel}" 
+                Grid.Column="1" Grid.Row="11"/>
+        <ComboBox x:Name="CBStatus" 
+                  Grid.Column="2" Grid.Row="11" Style="{DynamicResource ComboBox}"/>
 
         <Label Content="Директор" Style="{DynamicResource OrdinaryLabel}"
                Grid.Row="11" Grid.Column="3"/>
-        <ComboBox x:Name="RoleCb"  Grid.Row="11" Grid.Column="4"/>
+        <ComboBox x:Name="CBDirector" Grid.Row="11" Grid.Column="4" Style="{DynamicResource ComboBox}"/>
 
         <Button x:Name="BackBtn" Content="Назад"
                 Grid.Column="2" Grid.Row="13"
                 Click="BackBtn_Click" Style="{DynamicResource RoundCorner}" Width="250" Height="60"/>
 
-        <Button x:Name="AddBtn" Content="Изменить"
+        <Button x:Name="AddBtn" Content="Добавить"
                 Grid.Column="4" Grid.Row="13"
                 Click="AddBtn_Click" Style="{DynamicResource RoundCorner}" Width="250" Height="60"/>
     </Grid>

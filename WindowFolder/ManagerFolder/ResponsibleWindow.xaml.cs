@@ -24,7 +24,6 @@ namespace Construction.WindowFolder.ManagerFolder
         SqlConnection sqlConnection =
          new SqlConnection(@"Data Source=HOME-PC\SQLEXPRESS;
                                 Initial Catalog=user84");
-        SqlCommand sqlCommand;
         DGClass dGClass;
         public ResponsibleWindow()
         {

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Construction.WindowFolder.ManagerFolder"
         mc:Ignorable="d"
-        Title="ResponsibleWindow"
+        Title="Информация об ответственном"
         Height="550" Width="1500"
         MaxHeight="550" MaxWidth="1500"
         MinHeight="550" MinWidth="1500"
@@ -30,7 +30,7 @@
         <Image Style="{DynamicResource LogoImage}"
                Grid.Column="1" Grid.Row="1"/>
 
-        <Label Content="Информация ответственного"
+        <Label Content="Информация об ответственном"
                Grid.Row="1" Grid.Column="2"
                Style="{DynamicResource HeadingLabel}"/>
 
